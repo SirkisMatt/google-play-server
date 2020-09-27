@@ -24,7 +24,7 @@ app.get('/apps', (req, res) => {
       if (!['Rating', 'App'].includes(sort)) {
         return res
           .status(400)
-          .send('Sort must be one of title or rank');
+          .send('Sort must be one of App or Rating');
       }
     }
   
@@ -54,6 +54,5 @@ app.get('/apps', (req, res) => {
       .json(results);
   });
 
-app.listen(8000, () => {
-    console.log('Server started on PORT 8000');
-  });
+
+module.exports = app;
